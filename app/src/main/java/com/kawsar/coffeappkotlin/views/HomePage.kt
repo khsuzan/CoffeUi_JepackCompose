@@ -27,13 +27,14 @@ import com.kawsar.coffeappkotlin.ui.theme.poppins
 import com.kawsar.coffeappkotlin.views.subviews.CoffeTile
 
 @Composable
-fun HomePage() {
+fun HomePage(paddingValues: PaddingValues) {
     var text by rememberSaveable { mutableStateOf("") }
     var coffeeTypeIndex by rememberSaveable {
         mutableStateOf(0)
     }
     LazyColumn(
         modifier = Modifier
+            .padding(paddingValues)
             .padding(horizontal = 20.dp)
     ) {
         item {
@@ -106,7 +107,6 @@ fun HomePage() {
                         coffeItemInfo)
                 }
             }
-            Spacer(modifier = Modifier.height(100.dp))
         }
     }
 }
